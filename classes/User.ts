@@ -1,46 +1,46 @@
 export default class User {
-  private name: string;
-  private email: string;
-  private profilePicture: string;
-  private birthdate: Date;
+  private _name: string;
+  private _email: string;
+  private _profilePicture: string;
+  private _birthdate: Date;
 
   constructor(name: string, email: string, profilePicture: string, birthdate: Date) {
-    this.name = name;
-    this.email = email;
-    this.profilePicture = profilePicture;
-    this.birthdate = birthdate;
+    this._name = name;
+    this._email = email;
+    this._profilePicture = profilePicture;
+    this._birthdate = birthdate;
   }
 
-  getName(): string {
-    return this.name;
+  get name(): string {
+    return this._name;
   }
 
-  getEmail(): string {
-    return this.email;
+  get email(): string {
+    return this._email;
   }
 
-  getProfilePicture(): string {
-    return this.profilePicture;
+  get profilePicture(): string {
+    return this._profilePicture;
   }
 
-  getBirthdate(): Date {
-    return this.birthdate;
+  get birthdate(): Date {
+    return this._birthdate;
   }
 
-  setName(name: string): void {
-    this.name = name;
+  set name(name: string) {
+    this._name = name;
   }
 
-  setEmail(email: string): void {
-    this.email = email;
+  set email(email: string) {
+    this._email = email;
   }
 
-  setBirthdate(birthdate: Date): void {
-    this.birthdate = birthdate;
+  set birthdate(birthdate: Date) {
+    this._birthdate = birthdate;
   }
 
-  setProfilePicture(profilePicture: string): void {
-    this.profilePicture = profilePicture;
+  set profilePicture(profilePicture: string) {
+    this._profilePicture = profilePicture;
   }
 
   getAge(): number {

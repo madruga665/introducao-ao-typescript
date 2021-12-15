@@ -11,19 +11,19 @@ cardProfile1.style.height = "300px";
 cardProfile1.style.padding = "35px";
 
 const profileImg = <HTMLImageElement>document.createElement("img");
-profileImg.src = luciano.getProfilePicture();
-profileImg.alt = luciano.getName();
+profileImg.src = luciano.profilePicture;
+profileImg.alt = luciano.name;
 profileImg.style.width = "100px";
 profileImg.classList.add("profile-img");
 cardProfile1.appendChild(profileImg);
 
 const profileName = <HTMLHeadingElement>document.createElement("h3");
-profileName.innerText = luciano.getName();
+profileName.innerText = luciano.name;
 profileName.classList.add("profile-name");
 cardProfile1.appendChild(profileName);
 
 const profileEmail = <HTMLParagraphElement>document.createElement("p");
-profileEmail.innerText = luciano.getEmail();
+profileEmail.innerText = luciano.email;
 profileEmail.classList.add("profile-email");
 cardProfile1.appendChild(profileEmail);
 
