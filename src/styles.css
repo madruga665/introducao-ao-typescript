@@ -5,9 +5,10 @@
   font-family: sans-serif;
 }
 
-.cards-container {
+.cards-container{
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   margin: 25px 15px;
 }
 
