@@ -1,26 +1,19 @@
 import CardOperation from "../../classes/CardOperation";
 import Operations from "../../classes/Operations";
-import { ICardOperationsElements } from "../../interfaces/CardDomElements";
 
-const subtractElements: ICardOperationsElements = {
-  container: document.querySelector(".subtract-container"),
-  number1: document.querySelector("#subtract-number-1"),
-  number2: document.querySelector("#subtract-number-2"),
-  buttonCalcular: document.querySelector("#subtract-calcular"),
-  result: document.createElement("span"),
-}
+const container = <HTMLDivElement>document.querySelector(".subtract-container");
+const number1 = <HTMLInputElement>document.querySelector("#subtract-number-1");
+const number2 = <HTMLInputElement>document.querySelector("#subtract-number-2");
+const buttonCalcular = <HTMLButtonElement>document.querySelector("#subtract-calcular");
+const result = <HTMLSpanElement>document.createElement("span");
 
 const subtractCard = new CardOperation(
-  subtractElements.container,
-  subtractElements.number1,
-  subtractElements.number2,
-  subtractElements.buttonCalcular,
-  subtractElements.result,
+  number1.valueAsNumber,
+  number2.valueAsNumber,
   Operations.subtract
 );
 
-const rendersubtractCard = (): void => {
-  return subtractCard.calculate();
-};
-
-rendersubtractCard();
+buttonCalcular.addEventListener("click", () => {
+  result.innerHTML = subtractCard.calculate().toString();
+  container.appendChild(result);
+});
