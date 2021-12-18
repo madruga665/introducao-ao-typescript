@@ -4,16 +4,12 @@ import Operations from "../../classes/Operations";
 const container = <HTMLDivElement>document.querySelector(".subtract-container");
 const number1 = <HTMLInputElement>document.querySelector("#subtract-number-1");
 const number2 = <HTMLInputElement>document.querySelector("#subtract-number-2");
-const buttonCalcular = <HTMLButtonElement>document.querySelector("#subtract-calcular");
+const buttonCalcular = <HTMLButtonElement>document.querySelector("#subtract-calculate");
 const result = <HTMLSpanElement>document.createElement("span");
 
-const subtractCard = new CardOperation(
-  number1.valueAsNumber,
-  number2.valueAsNumber,
-  Operations.subtract
-);
-
 buttonCalcular.addEventListener("click", () => {
-  result.innerHTML = subtractCard.calculate().toString();
+  const subtractCard = new CardOperation(Number(number1.value), Number(number2.value));
+  result.innerHTML = String(Operations.subtract(subtractCard.number1, subtractCard.number2));
   container.appendChild(result);
 });
+
