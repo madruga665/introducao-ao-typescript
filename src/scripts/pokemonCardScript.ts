@@ -29,7 +29,7 @@ window.onload = async () => {
     card.appendChild(cardName);
 
     const cardType = document.createElement("p");
-    cardType.innerText = pokemon.type;
+    cardType.innerText = pokemon.type.substring(0, 1).toUpperCase() + pokemon.type.substring(1);
     card.appendChild(cardType);
   });
 };
