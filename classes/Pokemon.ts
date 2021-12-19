@@ -2,11 +2,13 @@ export default class Pokemon {
   private _name: string;
   private _type: string;
   private _picture: string;
+  private _id: number;
 
-  constructor(name: string, type: string, picture: string) {
+  constructor(name: string, type: string, picture: string, id: number) {
     this._name = name;
     this._type = type;
     this._picture = picture;
+    this._id = id;
   }
 
   get name(): string {
@@ -21,6 +23,10 @@ export default class Pokemon {
     return this._picture;
   }
 
+  get id(): number {
+    return this._id;
+  }
+
   set name(name: string) {
     this._name = name;
   }
@@ -31,5 +37,9 @@ export default class Pokemon {
 
   set picture(picture: string) {
     this._picture = picture;
+  }
+
+  set id(id: number) {
+    this._id = id;
   }
 }
